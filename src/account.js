@@ -17,18 +17,18 @@
     }
 });*/
 
-function logInFn(email, password){
+function logInFn(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
-        alert("ERROR: " + errorMessage );
-      }); 
+        alert("ERROR: " + errorMessage);
+    });
 };
 
 
-function signUpFn (email, password) {
+function signUpFn(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -37,14 +37,15 @@ function signUpFn (email, password) {
     });
 };
 
-function logOutFn(){
-    firebase.auth().signOut();/*.then(function() {
-        // Sign-out successful.
-        document.querySelector("#createAccount").style.display = "block";
-        document.querySelector("#welcomeUser").style.display = "none";
-      }).catch(function(error) {
-        // An error happened.
-    });*/
-}; 
+function logOutFn() {
+    firebase.auth().signOut();
+    /*.then(function() {
+            // Sign-out successful.
+            document.querySelector("#createAccount").style.display = "block";
+            document.querySelector("#welcomeUser").style.display = "none";
+          }).catch(function(error) {
+            // An error happened.
+        });*/
+};
 
-export { logInFn, signUpFn, logOutFn }
+export { logInFn, signUpFn, logOutFn };
