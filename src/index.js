@@ -1,18 +1,34 @@
+
 import "./firebase.js";
-import { registerFn, accesUsers } from './email.js';
 import { ponUp } from "./google.js";
-let email = document.getElementById("registerEmail");
-let password = document.getElementById("registerPassword");
+import { logInFn, signUpFn } from './account.js';
+import { facebook } from './facebook.js';
+
+
+document.querySelector('#googleAuth').addEventListener("click", () => {
+    ponUp();
+});
+
+let userEmail = document.querySelector("#emailField");
+let userPassword = document.querySelector ("#passwordField");
+
+document.querySelector("#logIn").addEventListener("click", (e) => {
+  e.preventDefault();
+  logInFn(userEmail.value, userPassword.value);
+});
 
 document.querySelector("#register").addEventListener("click", (e) => {
-    e.preventDefault();
-    registerFn(email.value, password.value)
-});
-document.querySelector("#sigIn").addEventListener("click", (e) => {
-    e.preventDefault();
-    accesUsers(email.value, password.value);
+  e.preventDefault();
+  signUpFn(userEmail.value, userPassword.value);
 });
 
-document.querySelector('#googleLogIn').addEventListener("click", () => {
-    ponUp();
-})
+document.querySelector("#logOut").addEventListener("click", (e) => {
+  e.preventDefault();
+  logOutFn();
+});
+
+document.querySelector("#facebookAuth").addEventListener("click", (e) => {
+  e.preventDefault();
+  //alert("k p2");
+  facebook();
+});
