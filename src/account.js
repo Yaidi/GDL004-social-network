@@ -34,6 +34,7 @@ function signUpFn (email, password) {
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
+        alert("Tu contraseña o tu correo no es válido" +" "+ ":(");
     });
 };
 
