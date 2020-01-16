@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+
+    <title>Feminist</title>
 </head>
+
 <body>
-  <script type="module" src="index.js"></script>
+    <div id="createAccount">
+        <h1>Crea tu cuenta</h1>
+        <form>
+            <!--input type="text" name="userName" id="registerName" placeholder="nombre">-->
+            <input type="email" name="email" id="registerEmail" placeholder="correo">
+            <input type="password" name="password" id="registerPassword" placeholder="contraseña">
+            <button type="submit" id="logIn">ingresa</button>
+            <button id="register">regístrate</button>
+        </form>
+        <p>Ó inicia sesión con</p>
+        <img src="./images/facebook.png" alt="facebook" id="facebookLogIn">
+        <input type="image" src="./images/google.png" alt="Google" id="googleLogIn">
+        <img src="./images/twitter (1).png" alt="Twitter" id="twitterLogIn">
+    </div>
+    <div id="Start" style="display: none;">
+        <form>
+            <!--input type="text" name="userName" id="registerName" placeholder="nombre">-->
+            <input type="email" name="email" id="userEmail" placeholder="correo">
+            <input type="password" name="password" id="userPassword" placeholder="contraseña">
+            <button type="submit" id="sigIn">ingresa</button>
+        </form>
+        <img src="./images/facebook.png" alt="facebook" id="facebookLogIn">
+        <img src="./images/google.png" alt="Google" id="googleLogIn">
+        <img src="./images/twitter (1).png" alt="Twitter" id="twitterLogIn">
+    </div>
+
+
+    <script type="module" src="index.js"></script>
 </body>
+
 </html>
