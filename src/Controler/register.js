@@ -1,7 +1,5 @@
-import "./firebase.js";
-import { logInFn, signUpFn } from "./account.js";
-import { facebook } from "./facebook.js";
-import { ponUp } from "./google.js";
+import { facebook, ponUp, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+
 
 document.querySelector('#googleAuth').addEventListener("click", () => {
     ponUp();
