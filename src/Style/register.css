@@ -1,45 +1,43 @@
-body{
+.register{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #F0C7A7;
-    color: #3C3E67;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
 }
-
-h1{
+.register h2{
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 800;
-    font-size: 60px;
-    line-height: 73px;
-    letter-spacing: 0.02em;
-    text-decoration-line: underline;
-}
-
-h2{
-    font-weight: 800;
+    font-weight: 1200;
     font-size: 36px;
     line-height: 44px;
+    text-align: center;
     letter-spacing: 0.02em;
+    color: #3C3E67;
 }
 
-button{
+.register #form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.register button{
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: #3C3E67;
     background-color: transparent;
     border-style: solid;
     border-color: #3C3E67;
-    padding: 5px;
     width: 40%;
     max-width: 200px;
-    margin:5px;
+    min-width: 193px;
+    margin-bottom:6%;
+    padding: 5%;
 }
 
-input{
+.register input{
     width: 30%;
     border: none;
     border-bottom-style: solid;
@@ -49,19 +47,33 @@ input{
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #3C3E67;
-    padding: 5px;
+    padding: 10px;
     line-height: 20px;
     letter-spacing: 0.02em;
-    margin:5px;
     width: 40%;
-    max-width: 200px;
+    width: 260px;
+    margin-bottom:6%;
 }
 
-#welcomeUser{
-    display: none;
+.register p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+    color: #3C3E67;
 }
 
-.socialMedia{
+.register #socialAuth{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.register .socialMedia{
     width: 40px;
-    padding: 5%;
+    padding: 10px;
 }

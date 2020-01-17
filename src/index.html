@@ -10,20 +10,34 @@
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./Style/register.css">
+    <link rel="stylesheet" href="./Style/main.css">
+    <link rel="stylesheet" href="./Style/welcome.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>FemMedia</title>
 </head>
 
 <body>
-    <div id="app"></div>
-    <div id="welcomeUser">
-        <h1>Welcome User</h1>
-        <div id="userID"></div>
-        <button type="submit" id="logOut">salir</button>
+    <div id="menu">
+        <ul class="navLinks">
+            <li>
+                <a href="#/">Femme App</a>
+            </li>
+            <li>
+                <a href="#/register">register</a>
+            </li>
+            <li>
+                <a href="#/home">home</a>
+            </li>
+        </ul>
     </div>
-    <script type="module" src="index.js"></script>
-
+    <div id="app"></div>
+    <div id="footer">
+        <p>Proyecto Social Network creado para Laboratoria.  </p>
+        <p>Visita nuestro repo: </p>
+        <a href="https://github.com/Yaidi/GDL004-social-network"><img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" alt="github" border="0"></a>
+    </div>
+<script type="module" src="router.js"></script>
 </body>
 
 </html>
