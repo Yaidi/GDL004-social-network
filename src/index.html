@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>FemMedia</title>
 </head>
+
 <body>
-  <script type="module" src="index.js"></script>
+    <div id="createAccount">
+        <h1>App Feminista</h1>
+        <h2>Crea tu cuenta</h2>
+        <form id="form">
+            <!--input type="text" name="userName" id="registerName" placeholder="nombre">-->
+            <input type="email" name="email" id="emailField" placeholder="correo"></br>
+            <input type="password" name="password" id="passwordField" placeholder="contraseña"></br>
+            <button type="submit" id="logIn">ingresa</button></br>
+            <button type="submit" id="register">regístrate</button></br>
+        </form>
+        <p>Ó inicia sesión con</p>
+        <!--input type="image" src="./images/facebook.png"id="facebook"-->
+        <img src="./images/facebook.png" alt="facebook" id="facebookAuth" class="socialMedia">
+        <img src="./images/google.png" alt="Google" id="googleAuth" class="socialMedia">
+        <img src="./images/twitter (1).png" alt="Twitter" id="twitterAuth" class="socialMedia">
+    </div>
+    <div id="welcomeUser">
+        <h1>Welcome User</h1>
+        <div id="userID"></div>
+        <button type="submit" id="logOut">salir</button>
+    </div>
+    <script type="module" src="index.js"></script>
+
 </body>
+
 </html>

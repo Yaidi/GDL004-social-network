@@ -1,7 +1,7 @@
-import { example } from '../src/example.js';
+import { registerFn } from '../src/index.js';
 
-describe('example', () => {
-  it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
-  });
+describe('ponUp', () => {
+    it('debería ser una función', () => {
+        expect(typeof registerFn).toBe('function');
+    });
 });
