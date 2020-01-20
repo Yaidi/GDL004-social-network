@@ -1,0 +1,41 @@
+.welcome{ 
+    /*background-image: url("../images/welcome.png");*/
+    width: 100%;
+}
+.welcome h1{
+    display: flex;
+    justify-content: flex-start;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 73px;
+    letter-spacing: 0.02em;
+    text-decoration-line: underline;
+    color: #3C3E67;
+    margin-top: 177px;
+    margin-left: 31px;
+}
+.welcome p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    color: #3C3E67;
+    margin-left: 31px;
+}
+.welcome button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #3C3E67;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #3C3E67;
+    padding: 5px;
+    width: 40%;
+    max-width: 200px;
+    margin-left: 31px;
+    margin-bottom: 10%;
+}
