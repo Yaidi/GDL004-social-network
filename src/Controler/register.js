@@ -1,6 +1,5 @@
 import { facebook, ponUp, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
 
-
 document.querySelector('#googleAuth').addEventListener("click", () => {
     ponUp();
 });

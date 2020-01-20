@@ -10,5 +10,5 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 //const dataBase = firebase.firestore();
-
+let database = firebase.database();
 //firebase.analytics();
