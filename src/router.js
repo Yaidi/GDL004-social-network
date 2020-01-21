@@ -1,8 +1,9 @@
-import { changeView } from "./Controler/index.js"
+import { router } from "./Controler/index.js"
 
 const init = () => {
-    changeView(window.location.hash)
-    window.addEventListener("hashchange", () => changeView(window.location.hash))
-};
+    router(window.location.hash)
+    window.addEventListener("hashchange", () => 
+    router(window.location.hash)
+)};
 
 window.addEventListener("load", init);

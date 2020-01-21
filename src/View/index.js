@@ -8,4 +8,6 @@ const components = {
     home: Home
 };
 
+localStorage.setItem("templates", JSON.stringify(components));
+
 export { components };
