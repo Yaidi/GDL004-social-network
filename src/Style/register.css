@@ -1,9 +1,14 @@
+
+@media screen and (max-width:768px){
+
 .register{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-image: url("../images/register.png");
+
 }
 .register h2{
     font-family: Montserrat;

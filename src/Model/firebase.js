@@ -1,3 +1,6 @@
+
+import { components } from "../View/index.js"
+
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
 
 var firebaseConfig = {
@@ -27,12 +30,9 @@ function logInFn(email, password){
 };
 
 //This is for view changes. We are not using it yet. 
-/*firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.querySelector("#createAccount").style.display = "none";
-      document.querySelector("#welcomeUser").style.display = "block";
-
       var user = firebase.auth().currentUser;
       
       if (user != null) {
@@ -44,7 +44,7 @@ function logInFn(email, password){
       document.querySelector("#createAccount").style.display = "block";
       document.querySelector("#welcomeUser").style.display = "none";
     }
-});*/
+});
 
 /*------------------------------SIGN UP -----------------------------*/
 
@@ -72,7 +72,7 @@ function logOutFn(){
 
 
 /*------------------------------FACEBOOK AUTH-----------------------------*/
-function facebook(){
+function facebookAuth(){
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('user_birthday');
     firebase.auth().useDeviceLanguage();
@@ -101,7 +101,7 @@ provider.setCustomParameters({
     'login_hint': 'user@example.com'
 });
 
-function ponUp() {
+function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
@@ -121,9 +121,7 @@ function ponUp() {
 };
 
 /*------------------------------TWITTER AUTH-----------------------------*/
-
-
-function twitter(){
+function twitterAuth(){
   var provider = new firebase.auth.TwitterAuthProvider();
   firebase.auth().useDeviceLanguage();
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -145,4 +143,4 @@ function twitter(){
     });
 };
 
-export { facebook, ponUp, twitter, logInFn, signUpFn, logOutFn }
+export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
