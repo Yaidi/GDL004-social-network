@@ -24,34 +24,32 @@ export default () => {
 
     //Email auth btns
 
-    let userEmail = wrapperDiv.querySelector("#emailField");
-    let userPassword = wrapperDiv.querySelector("#passwordField");
-
-
-    wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
-        e.preventDefault();
-        logInFn(userEmail.value, userPassword.value);
-    });
-    wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
-        e.preventDefault();
-        signUpFn(userEmail.value, userPassword.value);
-    });
-
-    //Social media auth btns
-
-    wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
-        e.preventDefault();
-        facebookAuth();
-    });
-    wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
-        e.preventDefault();
-        googleAuth();
-    });
-    wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
-        e.preventDefault();
-        twitterAuth();
-    });
-
-    return wrapperDiv;
-
+    return divElmnt;
 };
+
+//Email auth btns
+
+
+wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
+    e.preventDefault();
+    logInFn(userEmail.value, userPassword.value);
+});
+wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
+    e.preventDefault();
+    signUpFn(userEmail.value, userPassword.value);
+});
+
+//Social media auth btns
+
+wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    facebookAuth();
+});
+wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    googleAuth();
+});
+wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    twitterAuth();
+});

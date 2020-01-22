@@ -149,6 +149,7 @@ function twitterAuth(){
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function twitter() {
     var provider = new firebase.auth.TwitterAuthProvider();
@@ -176,3 +177,6 @@ export { facebook, ponUp, twitter, logInFn, signUpFn, logOutFn }
 =======
 export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
 >>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73
+=======
+export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
+>>>>>>> b033bcba60c0bd62d74d63b52385ae9439904b6a
