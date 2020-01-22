@@ -3,7 +3,11 @@ export default () => {
         <div class="welcome">
             <h1>Femme App </h1>
             <p>La primera comunidad digital exclusiva para mujeres feministas</p>
-            <button type="submit" id="connect">conéctate</button>
+            <button type="submit"><a href="#/register">conéctate</a></button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b033bcba60c0bd62d74d63b52385ae9439904b6a
         </div>`
     const divElmnt = document.createElement("div")
     divElmnt.innerHTML = viewWelcome;

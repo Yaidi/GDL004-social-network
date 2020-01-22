@@ -1,5 +1,11 @@
+//import { logIn, signUp } from "../Controler/register.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+
 export default () => {
-    const viewRegister = `
+
+    const wrapperDiv = document.createElement('div');
+
+    wrapperDiv.innerHTML = `
     <div class="register"> 
         <h2>Bienvenida</h2>
             <form id="form">
@@ -15,9 +21,35 @@ export default () => {
             <img src="./images/twitter (1).png" alt="Twitter" id="twitterAuth" class="socialMedia"></img>
         </div>
     </div>`
-    
-    const divElmnt = document.createElement("div")
-    divElmnt.innerHTML = viewRegister;
+
+    //Email auth btns
 
     return divElmnt;
-};  
+};
+
+//Email auth btns
+
+
+wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
+    e.preventDefault();
+    logInFn(userEmail.value, userPassword.value);
+});
+wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
+    e.preventDefault();
+    signUpFn(userEmail.value, userPassword.value);
+});
+
+//Social media auth btns
+
+wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    facebookAuth();
+});
+wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    googleAuth();
+});
+wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
+    e.preventDefault();
+    twitterAuth();
+});

@@ -1,41 +1,103 @@
-.welcome{ 
-    /*background-image: url("../images/welcome.png");*/
+.welcome{
+    background-image: url("../images/desktop.png");
     width: 100%;
 }
 .welcome h1{
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 800;
-    font-size: 60px;
-    line-height: 73px;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 122px;
     letter-spacing: 0.02em;
     text-decoration-line: underline;
+    text-align: right;
     color: #3C3E67;
-    margin-top: 177px;
-    margin-left: 31px;
+    /*margin-top: 137px;*/
+    margin-left: 950px;
+    margin-right: 150px;
+    max-width: 1280px;
 }
 .welcome p {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 36px;
+    line-height: 44px;
     letter-spacing: 0.02em;
+    text-align: right;
     color: #3C3E67;
-    margin-left: 31px;
+    margin-left: 1000px;
+    margin-top: 300px;
+    margin-right: 150px;
 }
 .welcome button {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #3C3E67;
     background-color: transparent;
-    border-style: solid;
-    border-color: #3C3E67;
-    padding: 5px;
-    width: 40%;
-    max-width: 200px;
-    margin-left: 31px;
-    margin-bottom: 10%;
+    border: 4px solid #3C3E67;
+    padding: 10px;
+    width: 272px;
+    margin-left: 1250px;
+    margin-bottom: 84px;
+    margin-right: 150px;
+}
+
+.welcome a{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: #3C3E67;
+}
+
+
+
+@media screen and (max-width:768px){
+    .welcome{ 
+        background-image: url("../images/welcome.png");
+        width: 100%;
+    }
+    .welcome h1{
+        display: flex;
+        justify-content: flex-start;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 73px;
+        letter-spacing: 0.02em;
+        text-decoration-line: underline;
+        color: #3C3E67;
+        margin-top: 177px;
+        margin-left: 31px;
+    }
+    .welcome p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.02em;
+        color: #3C3E67;
+        margin-left: 31px;
+    }
+
+    .welcome button {
+        background-color: transparent;
+        border: 2px solid #3C3E67;
+        padding: 10px;
+        width: 170px;
+        margin-left: 31px;
+        margin-bottom: 10%;
+    }
+
+    .welcome a{
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: #3C3E67;
+    }
 }
