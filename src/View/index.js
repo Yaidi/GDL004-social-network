@@ -10,4 +10,6 @@ const components = {
     perfil: Perfil
 };
 
+localStorage.setItem("templates", JSON.stringify(components));
+
 export { components };

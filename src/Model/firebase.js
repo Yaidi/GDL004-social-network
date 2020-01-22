@@ -1,3 +1,6 @@
+
+import { components } from "../View/index.js"
+
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
 
 let firebaseConfig = {
@@ -27,12 +30,9 @@ function logInFn(email, password) {
 };
 
 //This is for view changes. We are not using it yet. 
-/*firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      document.querySelector("#createAccount").style.display = "none";
-      document.querySelector("#welcomeUser").style.display = "block";
-
       var user = firebase.auth().currentUser;
       
       if (user != null) {
@@ -44,7 +44,7 @@ function logInFn(email, password) {
       document.querySelector("#createAccount").style.display = "block";
       document.querySelector("#welcomeUser").style.display = "none";
     }
-});*/
+});
 
 /*------------------------------SIGN UP -----------------------------*/
 
@@ -73,7 +73,11 @@ function logOutFn() {
 
 
 /*------------------------------FACEBOOK AUTH-----------------------------*/
+<<<<<<< HEAD
 function facebook() {
+=======
+function facebookAuth(){
+>>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('user_birthday');
     firebase.auth().useDeviceLanguage();
@@ -102,7 +106,7 @@ provider.setCustomParameters({
     'login_hint': 'user@example.com'
 });
 
-function ponUp() {
+function googleAuth() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
@@ -122,7 +126,29 @@ function ponUp() {
 };
 
 /*------------------------------TWITTER AUTH-----------------------------*/
+function twitterAuth(){
+  var provider = new firebase.auth.TwitterAuthProvider();
+  firebase.auth().useDeviceLanguage();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Twitter Access Token. You can use it to access the Twitter API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      console.log(user)
+      // ...
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+};
 
+<<<<<<< HEAD
 
 function twitter() {
     var provider = new firebase.auth.TwitterAuthProvider();
@@ -147,3 +173,6 @@ function twitter() {
 };
 
 export { facebook, ponUp, twitter, logInFn, signUpFn, logOutFn }
+=======
+export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
+>>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73

@@ -1,79 +1,77 @@
-.register{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.register h2{
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 1200;
-    font-size: 36px;
-    line-height: 44px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #3C3E67;
-}
-
-.register #form{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.register button{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #3C3E67;
-    background-color: transparent;
-    border-style: solid;
-    border-color: #3C3E67;
-    width: 40%;
-    max-width: 200px;
-    min-width: 193px;
-    margin-bottom:6%;
-    padding: 5%;
-}
-
-.register input{
-    width: 30%;
-    border: none;
-    border-bottom-style: solid;
-    border-color: #3C3E67;
-    border-width: thin;
-    background-color: transparent;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    color: #3C3E67;
-    padding: 10px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
-    width: 40%;
-    width: 260px;
-    margin-bottom:6%;
-}
-
-.register p {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 0.02em;
-    color: #3C3E67;
-}
-
-.register #socialAuth{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-around;
-}
-
-.register .socialMedia{
-    width: 40px;
-    padding: 10px;
+@media screen and (max-width:768px) {
+    .register {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../images/register.png");
+    }
+    .register h2 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 1200;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #3C3E67;
+    }
+    .register #form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .register button {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: #3C3E67;
+        background-color: transparent;
+        border-style: solid;
+        border-color: #3C3E67;
+        width: 40%;
+        max-width: 200px;
+        min-width: 193px;
+        margin-bottom: 6%;
+        padding: 5%;
+    }
+    .register input {
+        width: 30%;
+        border: none;
+        border-bottom-style: solid;
+        border-color: #3C3E67;
+        border-width: thin;
+        background-color: transparent;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        color: #3C3E67;
+        padding: 10px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        width: 40%;
+        width: 260px;
+        margin-bottom: 6%;
+    }
+    .register p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: #3C3E67;
+    }
+    .register #socialAuth {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-around;
+    }
+    .register .socialMedia {
+        width: 40px;
+        padding: 10px;
+    }
 }

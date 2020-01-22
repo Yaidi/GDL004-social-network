@@ -1,29 +1,45 @@
-import { facebook, ponUp, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
 
-document.querySelector('#googleAuth').addEventListener("click", () => {
-    ponUp();
-});
-
-let userEmail = document.querySelector("#emailField");
-let userPassword = document.querySelector("#passwordField");
-
-document.querySelector("#logIn").addEventListener("click", (e) => {
+//Log in / Sign up with email
+function logIn(e) {
     e.preventDefault();
     logInFn(userEmail.value, userPassword.value);
-});
+};
 
-document.querySelector("#register").addEventListener("click", (e) => {
+function signUp(e) {
     e.preventDefault();
     signUpFn(userEmail.value, userPassword.value);
+};
+/*
+document.querySelector("#register").addEventListener("click", (e) => {
+  e.preventDefault();
+  //signUpFn(userEmail.value, userPassword.value);
+  alert("register");
+>>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73
 });
-
+/*
 document.querySelector("#logOut").addEventListener("click", (e) => {
-    e.preventDefault();
-    logOutFn();
+  e.preventDefault();
+  alert("log out")
+  //logOutFn();
 });
 
+//Log in / Sign up with social media account
 document.querySelector("#facebookAuth").addEventListener("click", (e) => {
-    e.preventDefault();
-    //alert("k p2");
-    facebook();
+  e.preventDefault();
+  console.log("facebook");
+  //facebookAuth();
 });
+
+document.querySelector('#googleAuth').addEventListener("click", () => {
+  alert("k rollo");
+  //googleAuth();
+});
+
+document.querySelector('#twitterAuth').addEventListener("click", () => {
+  alert("k pex");
+  //twitterAuth();
+});
+*/
+
+export { logIn, signUp };
