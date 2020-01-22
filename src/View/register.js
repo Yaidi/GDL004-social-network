@@ -3,7 +3,7 @@ import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } fr
 
 export default () => {
 
-const wrapperDiv = document.createElement('div');
+    const wrapperDiv = document.createElement('div');
 
     wrapperDiv.innerHTML = `
     <div class="register"> 
@@ -22,16 +22,12 @@ const wrapperDiv = document.createElement('div');
         </div>
     </div>`
 
-    const divElmnt = document.createElement("div")
-    divElmnt.innerHTML = viewRegister;
+    //Email auth btns
 
     return divElmnt;
 };
-    
-//Email auth btns
 
-let userEmail = wrapperDiv.querySelector("#emailField");
-let userPassword = wrapperDiv.querySelector ("#passwordField");
+//Email auth btns
 
 
 wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
@@ -57,8 +53,3 @@ wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
     e.preventDefault();
     twitterAuth();
 });
-
-return wrapperDiv;
-
-};
-
