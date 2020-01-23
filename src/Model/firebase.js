@@ -82,23 +82,19 @@ const loginApps = (providers) => {
   switch (providers){
     case 1: 
       firebase.auth().signInWithPopup(providerGoogle).then(function(result){   
-        // This gives you a Twitter Access Token. You can use it to access the Twitter API.
+        // This gives you a Google Access Token. You can use it to access the Twitter API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        console.log(user)
-        // ...
       })
       break;
 
     case 2:
     firebase.auth().signInWithPopup(providerFacebook).then(function(result){
-           // This gives you a Twitter Access Token. You can use it to access the Twitter API.
+           // This gives you a Facebook Access Token. You can use it to access the Twitter API.
            var token = result.credential.accessToken;
            // The signed-in user info.
            var user = result.user;
-           console.log(user)
-           // ...
          });
     break;
 
@@ -108,8 +104,6 @@ const loginApps = (providers) => {
            var token = result.credential.accessToken;
            // The signed-in user info.
            var user = result.user;
-           console.log(user)
-           // ...
          });
     break;
   }
