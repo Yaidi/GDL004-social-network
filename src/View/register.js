@@ -1,5 +1,5 @@
 //import { logIn, signUp } from "../Controler/register.js";
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
 
 export default () => {
 
@@ -21,13 +21,11 @@ export default () => {
             <img src="./images/twitter (1).png" alt="Twitter" id="twitterAuth" class="socialMedia"></img>
         </div>
     </div>`
-
-    //Email auth btns
-
-    return divElmnt;
-};
-
+    
 //Email auth btns
+
+let userEmail = wrapperDiv.querySelector("#emailField");
+let userPassword = wrapperDiv.querySelector ("#passwordField");
 
 
 wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
@@ -43,13 +41,17 @@ wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
 
 wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
     e.preventDefault();
-    facebookAuth();
+    loginApps(2);
 });
 wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
     e.preventDefault();
-    googleAuth();
+    loginApps(1);
 });
 wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
     e.preventDefault();
-    twitterAuth();
+    loginApps(3);
 });
+
+return wrapperDiv;
+
+};

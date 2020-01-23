@@ -3,7 +3,7 @@ import { components } from "../View/index.js"
 
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
 
-let firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyDZBy9n50HCcJmEOL5-zzYyguPmUJGk3yM",
     authDomain: "red-feminista.firebaseapp.com",
     databaseURL: "https://red-feminista.firebaseio.com",
@@ -15,18 +15,18 @@ let firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-let dataBase = firebase.database();
+//const dataBase = firebase.firestore();
 
 /*------------------------------LOG IN -----------------------------*/
 
-function logInFn(email, password) {
+function logInFn(email, password){
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
+        var errorCode = error.code;
+        var errorMessage = error.message;
         // ...
-        alert("ERROR: " + errorMessage);
-    });
+        alert("ERROR: " + errorMessage );
+      }); 
 };
 
 //This is for view changes. We are not using it yet. 
@@ -48,135 +48,64 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 /*------------------------------SIGN UP -----------------------------*/
 
-function signUpFn(email, password) {
+function signUpFn (email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-        alert("Tu contraseña o tu correo no es válido" + " " + ":(");
+        alert("Tu contraseña o tu correo no es válido" +" "+ ":(");
     });
 };
 
 /*------------------------------LOG OUT-----------------------------*/
 
-function logOutFn() {
-    firebase.auth().signOut();
-    /*.then(function() {
-            // Sign-out successful.
-            document.querySelector("#createAccount").style.display = "block";
-            document.querySelector("#welcomeUser").style.display = "none";
-          }).catch(function(error) {
-            // An error happened.
-        });*/
-};
+function logOutFn(){
+    firebase.auth().signOut();/*.then(function() {
+        // Sign-out successful.
+        document.querySelector("#createAccount").style.display = "block";
+        document.querySelector("#welcomeUser").style.display = "none";
+      }).catch(function(error) {
+        // An error happened.
+    });*/
+}; 
 
 
-/*------------------------------FACEBOOK AUTH-----------------------------*/
-<<<<<<< HEAD
-function facebook() {
-=======
-function facebookAuth(){
->>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73
-    var provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    firebase.auth().useDeviceLanguage();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+/*------------------------------LOG IN APPS-----------------------------*/
+const providerGoogle = new firebase.auth.GoogleAuthProvider();
+
+const providerFacebook = new firebase.auth.FacebookAuthProvider();
+const providerTwitter = new firebase.auth.TwitterAuthProvider();
+
+const loginApps = (providers) => {
+  switch (providers){
+    case 1: 
+      firebase.auth().signInWithPopup(providerGoogle).then(function(result){   
+        // This gives you a Google Access Token. You can use it to access the Twitter API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        console.log(user)
-            // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-};
+      })
+      break;
 
-/*------------------------------GOOGLE AUTH-----------------------------*/
-var provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({
-    'login_hint': 'user@example.com'
-});
+    case 2:
+    firebase.auth().signInWithPopup(providerFacebook).then(function(result){
+           // This gives you a Facebook Access Token. You can use it to access the Twitter API.
+           var token = result.credential.accessToken;
+           // The signed-in user info.
+           var user = result.user;
+         });
+    break;
 
-function googleAuth() {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-};
+    case 3:
+    firebase.auth().signInWithPopup(providerTwitter).then(function(result){
+           // This gives you a Twitter Access Token. You can use it to access the Twitter API.
+           var token = result.credential.accessToken;
+           // The signed-in user info.
+           var user = result.user;
+         });
+    break;
+  }
+}
 
-/*------------------------------TWITTER AUTH-----------------------------*/
-function twitterAuth(){
-  var provider = new firebase.auth.TwitterAuthProvider();
-  firebase.auth().useDeviceLanguage();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Twitter Access Token. You can use it to access the Twitter API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log(user)
-      // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-};
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-function twitter() {
-    var provider = new firebase.auth.TwitterAuthProvider();
-    firebase.auth().useDeviceLanguage();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Twitter Access Token. You can use it to access the Twitter API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(user)
-            // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-};
-
-export { facebook, ponUp, twitter, logInFn, signUpFn, logOutFn }
-=======
-export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
->>>>>>> 2044ef7be7e8dbd8d8bf67ba1274f6f65b67db73
-=======
-export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
->>>>>>> b033bcba60c0bd62d74d63b52385ae9439904b6a
+export { logInFn, signUpFn, logOutFn, loginApps }
