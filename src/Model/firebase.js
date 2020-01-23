@@ -1,4 +1,6 @@
 
+console.log("Hola Yaidi");
+
 import { components } from "../View/index.js"
 
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
