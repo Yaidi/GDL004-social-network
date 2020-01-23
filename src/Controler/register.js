@@ -1,4 +1,4 @@
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
 
 //Log in / Sign up with email
 function logIn(email, password, errorMsg) {
@@ -26,7 +26,7 @@ function logIn(email, password, errorMsg) {
 };
 
 //Log in / Sign up with facebook
-function facebookSignIn(){
+/*function facebookSignIn(){
   facebookAuth()
     .then((result) => {
       const user = result.user;
@@ -75,7 +75,6 @@ function twitterSignIn(){
       alert(`Ups! Algo salió mal. Error detectado: ${errorMessage}`)
       console.log('error detectado:', error);
     });
-};
-
+};*/
 
 export { logIn, facebookSignIn, googleSignIn, twitterSignIn };

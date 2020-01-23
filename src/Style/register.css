@@ -89,8 +89,7 @@ register .container{
 
 .register .socialMedia{
     width: 60px;
-    padding: 10px;
-}
+    padding: 10px;}
 
 @media screen and (max-width:768px){
     .register{
@@ -103,7 +102,7 @@ register .container{
         width: 100vw;
         height: 100vh;
     }
-    .register h2{
+    .register h2 {
         font-family: Montserrat;
         font-style: normal;
         font-weight: 1200;
@@ -113,7 +112,6 @@ register .container{
         letter-spacing: 0.02em;
         color: #3C3E67;
     }
-
     .register #form{
         display: flex;
         flex-direction: column;
@@ -121,7 +119,7 @@ register .container{
         justify-content: center;
         align-items: center;
     }
-    .register button{
+    .register button {
         font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         color: #3C3E67;
@@ -131,11 +129,10 @@ register .container{
         width: 40%;
         max-width: 200px;
         min-width: 193px;
-        margin-bottom:6%;
+        margin-bottom: 6%;
         padding: 5%;
     }
-
-    .register input{
+    .register input {
         width: 30%;
         border: none;
         border-bottom-style: solid;
@@ -150,9 +147,8 @@ register .container{
         letter-spacing: 0.02em;
         width: 40%;
         width: 260px;
-        margin-bottom:6%;
+        margin-bottom: 6%;
     }
-
     .register p {
         font-family: Montserrat;
         font-style: normal;
@@ -162,16 +158,14 @@ register .container{
         letter-spacing: 0.02em;
         color: #3C3E67;
     }
-
-    .register #socialAuth{
+    .register #socialAuth {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: space-around;
     }
-
-    .register .socialMedia{
+    .register .socialMedia {
         width: 40px;
         padding: 10px;
     }

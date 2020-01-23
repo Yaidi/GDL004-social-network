@@ -3,7 +3,7 @@ import { signUpFn } from "../Model/firebase.js"
 
 export default () => {
 
-const wrapperDiv = document.createElement('div');
+    const wrapperDiv = document.createElement('div');
 
     wrapperDiv.innerHTML = `
     <div class="register"> 
@@ -52,5 +52,5 @@ wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
 });
 
 return wrapperDiv;
-
+  
 };
