@@ -1,5 +1,5 @@
 //import { logIn, signUp } from "../Controler/register.js";
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
+import { logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
 
 export default () => {
 
