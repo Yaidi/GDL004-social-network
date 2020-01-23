@@ -1,6 +1,3 @@
-
-import { components } from "../View/index.js"
-
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
 
 var firebaseConfig = {
@@ -20,56 +17,57 @@ firebase.initializeApp(firebaseConfig);
 /*------------------------------LOG IN -----------------------------*/
 
 function logInFn(email, password){
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        alert("ERROR: " + errorMessage );
-      }); 
+    firebase.auth().signInWithEmailAndPassword(email, password);
 };
 
 //This is for view changes. We are not using it yet. 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      //window.location.assign("#/home");
+      //local storage
       var user = firebase.auth().currentUser;
       
       if (user != null) {
         var email_id = user.email;
-        document.querySelector("#userID").innerHTML = "User : " + email_id;
+       // document.querySelector("#userID").innerHTML = "User : " + email_id;
       }
     } else {
       // No user is signed in.
-      document.querySelector("#createAccount").style.display = "block";
-      document.querySelector("#welcomeUser").style.display = "none";
+     // document.querySelector("#createAccount").style.display = "block";
+      //document.querySelector("#welcomeUser").style.display = "none";
     }
 });
 
 /*------------------------------SIGN UP -----------------------------*/
 
 function signUpFn (email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        alert("Tu contraseña o tu correo no es válido" +" "+ ":(");
-    });
+    firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
 /*------------------------------LOG OUT-----------------------------*/
 
 function logOutFn(){
-    firebase.auth().signOut();/*.then(function() {
-        // Sign-out successful.
-        document.querySelector("#createAccount").style.display = "block";
-        document.querySelector("#welcomeUser").style.display = "none";
-      }).catch(function(error) {
-        // An error happened.
-    });*/
+    firebase.auth().signOut();
 }; 
 
+/*------------------------------FACEBOOK AUTH-----------------------------*/
+/*function facebookAuth(){
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+};*/
+
+/*------------------------------GOOGLE AUTH-----------------------------*/
+/*function googleAuth() {
+  var provider = new firebase.auth.GoogleAuthProvider();  
+  firebase.auth().signInWithPopup(provider);
+};*/
+
+/*------------------------------TWITTER AUTH-----------------------------*/
+/*function twitterAuth(){
+  var provider = new firebase.auth.TwitterAuthProvider();
+  firebase.auth().signInWithPopup(provider);
+};*/
 
 /*------------------------------LOG IN APPS-----------------------------*/
 const providerGoogle = new firebase.auth.GoogleAuthProvider();
