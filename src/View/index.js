@@ -7,7 +7,7 @@ const components = {
     welcome: Welcome,
     register: Register,
     home: Home,
-    perfil: Perfil
+    perfil: Perfil,
 };
 
 localStorage.setItem("templates", JSON.stringify(components));
