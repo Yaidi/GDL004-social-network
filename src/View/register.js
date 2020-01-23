@@ -1,5 +1,5 @@
 //import { logIn, signUp } from "../Controler/register.js";
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
+import { logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
 
 export default () => {
 
@@ -21,37 +21,37 @@ export default () => {
             <img src="./images/twitter (1).png" alt="Twitter" id="twitterAuth" class="socialMedia"></img>
         </div>
     </div>`
-    
-//Email auth btns
 
-let userEmail = wrapperDiv.querySelector("#emailField");
-let userPassword = wrapperDiv.querySelector ("#passwordField");
+    //Email auth btns
+
+    let userEmail = wrapperDiv.querySelector("#emailField");
+    let userPassword = wrapperDiv.querySelector("#passwordField");
 
 
-wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
-    e.preventDefault();
-    logInFn(userEmail.value, userPassword.value);
-});
-wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
-    e.preventDefault();
-    signUpFn(userEmail.value, userPassword.value);
-});
+    wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
+        e.preventDefault();
+        logInFn(userEmail.value, userPassword.value);
+    });
+    wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
+        e.preventDefault();
+        signUpFn(userEmail.value, userPassword.value);
+    });
 
-//Social media auth btns
+    //Social media auth btns
 
-wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
-    e.preventDefault();
-    loginApps(2);
-});
-wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
-    e.preventDefault();
-    loginApps(1);
-});
-wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
-    e.preventDefault();
-    loginApps(3);
-});
+    wrapperDiv.querySelector("#facebookAuth").addEventListener("click", (e) => {
+        e.preventDefault();
+        loginApps(2);
+    });
+    wrapperDiv.querySelector("#googleAuth").addEventListener("click", (e) => {
+        e.preventDefault();
+        loginApps(1);
+    });
+    wrapperDiv.querySelector("#twitterAuth").addEventListener("click", (e) => {
+        e.preventDefault();
+        loginApps(3);
+    });
 
-return wrapperDiv;
+    return wrapperDiv;
 
 };
