@@ -1,9 +1,9 @@
 //import { logIn, signUp } from "../Controler/register.js";
-import { logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, loginApps } from "../Model/firebase.js";
 
 export default () => {
 
-const wrapperDiv = document.createElement('div');
+    const wrapperDiv = document.createElement('div');
 
     wrapperDiv.innerHTML = `
     <div class="register"> 

@@ -34,6 +34,11 @@
     "stylelint-config-recommended": "^2.2.0"
   },
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^7.6.2"
+=======
+    "firebase": "^7.6.2",
+    "jscs": "^3.0.7"
+>>>>>>> bf365f3376b1e99635b7adc4c9e9deccdec04c0e
   }
 }

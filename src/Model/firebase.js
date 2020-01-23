@@ -75,7 +75,6 @@ function logOutFn(){
 const providerGoogle = new firebase.auth.GoogleAuthProvider();
 
 const providerFacebook = new firebase.auth.FacebookAuthProvider();
-
 const providerTwitter = new firebase.auth.TwitterAuthProvider();
 
 const loginApps = (providers) => {
