@@ -1,4 +1,4 @@
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
 
 //Log in / Sign up with email
 function logIn(e) {
