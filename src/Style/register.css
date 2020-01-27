@@ -1,0 +1,178 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C3047;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+.register h2{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 1200;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: white;
+}
+
+.register #form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.register button{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border-style: solid;
+    border-color: white;
+    width: 40%;
+    max-width: 200px;
+    min-width: 193px;
+    margin-bottom:6%;
+    padding: 5%;
+}
+
+.register input{
+    width: 30%;
+    border: none;
+    border-bottom-style: solid;
+    border-color: white;
+    border-width: thin;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    width: 40%;
+    width: 260px;
+    margin-bottom:6%;
+}
+
+.register p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+    color: white;
+}
+
+.register #socialAuth{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.register .socialMedia{
+    width: 40px;
+    padding: 10px;
+}
+
+@media screen and (min-width:768px){
+ 
+    .register{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../images/wlcmDesk.png");
+        width: 100vw;
+        height: 100vh;
+    }
+    register .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(240, 199, 167, 0.89);
+        width: 612px;
+        height: 792px;
+        z-index: +1;
+    }
+    .register h2 {
+        display: flex;
+        justify-content: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 50px;
+        line-height: 61px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color:white;
+        margin-top: 60px;
+    }
+    .register #form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .register button {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        color: white;
+        background-color: transparent;
+        border-style: solid;
+        border-color: white;
+        width: 40%;
+        max-width: 230px;
+        min-width: 193px;
+        margin-bottom: 6%;
+        padding: 5%;
+    }
+    .register input{
+        width: 30%;
+        border: none;
+        border-bottom-style: solid;
+        border-color: white;
+        border-width: thin;
+        background-color: transparent;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        color: white;
+        padding: 10px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        width: 320px;
+        margin-bottom:6%;
+    }
+    .register p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: white;
+    }
+    .register #socialAuth {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-around;
+    }
+
+    .register .socialMedia{
+        width: 60px;
+        padding: 10px;
+    }   
+}
