@@ -10,6 +10,7 @@ const wrapperDiv = document.createElement('div');
         <div class= "container"></div>
         <h2>Bienvenida</h2>
             <form id="form">
+                <div id="mensajeError"></div>
                 <input type="email" name="email" id="emailField" placeholder="correo"></br>
                 <input type="password" name="password" id="passwordField" placeholder="contraseña"></br>
                 <button type="submit" id="logIn">ingresa</button></br>
@@ -26,10 +27,11 @@ const wrapperDiv = document.createElement('div');
 //Email auth btns
 let userEmail = wrapperDiv.querySelector("#emailField");
 let userPassword = wrapperDiv.querySelector ("#passwordField");
+let errorMsg = wrapperDiv.querySelector("#mensajeError");
 
 wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
     e.preventDefault();
-    logIn(userEmail.value, userPassword.value);
+    logIn(userEmail.value, userPassword.value, errorMsg);
 });
 wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
     e.preventDefault();

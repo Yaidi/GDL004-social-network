@@ -17,11 +17,11 @@ firebase.initializeApp(firebaseConfig);
 /*------------------------------LOG IN -----------------------------*/
 
 function logInFn(email, password){
-    firebase.auth().signInWithEmailAndPassword(email, password);
+  return firebase.auth().signInWithEmailAndPassword(email, password);
 };
 
 //This is for view changes. We are not using it yet. 
-firebase.auth().onAuthStateChanged(function(user) {
+/*firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       //window.location.assign("#/home");
@@ -37,36 +37,47 @@ firebase.auth().onAuthStateChanged(function(user) {
      // document.querySelector("#createAccount").style.display = "block";
       //document.querySelector("#welcomeUser").style.display = "none";
     }
-});
+});*/
 
 /*------------------------------SIGN UP -----------------------------*/
 
 function signUpFn (email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password);
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
 /*------------------------------LOG OUT-----------------------------*/
 
 function logOutFn(){
-    firebase.auth().signOut();
+  return firebase.auth().signOut();
 }; 
 
 /*------------------------------FACEBOOK AUTH-----------------------------*/
 function facebookAuth(){
-    var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+  var provider = new firebase.auth.FacebookAuthProvider();
+  return firebase.auth().signInWithPopup(provider);
 };
 
 /*------------------------------GOOGLE AUTH-----------------------------*/
 function googleAuth() {
   var provider = new firebase.auth.GoogleAuthProvider();  
-  firebase.auth().signInWithPopup(provider);
+  return firebase.auth().signInWithPopup(provider);
 };
 
 /*------------------------------TWITTER AUTH-----------------------------*/
 function twitterAuth(){
   var provider = new firebase.auth.TwitterAuthProvider();
-  firebase.auth().signInWithPopup(provider);
+  return firebase.auth().signInWithPopup(provider);
 };
 
-export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn }
+/*------------------------------CREATE USER-----------------------------*/
+function createUser (id, name, email, foto) {
+  return firebase.firestore().collection('users').doc(id).set({
+    ID: id,
+    Nombre: name,
+    Email: email,
+    Foto: foto,
+  });
+};
+
+
+export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }

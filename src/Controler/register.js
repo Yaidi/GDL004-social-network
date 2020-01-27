@@ -1,12 +1,13 @@
-import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, createUser } from "../Model/firebase.js";
 
 //Log in / Sign up with email
 function logIn(email, password, errorMsg) {
-  logInFn(email, password)
+ logInFn(email, password)
   .then(() => {
     window.location.hash = "#/home"
   })
   .catch((error) => {
+    console.log(error);
     const errorCode = error.code;
     const errorMessage = error.message;
     switch (errorCode) {
