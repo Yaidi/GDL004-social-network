@@ -20,7 +20,6 @@ export default () => {
         <button type='submit'>Publicar</button>
     </div>`
     
-    
     const userId = viewHome.querySelector("#userID");
 
     return viewHome;

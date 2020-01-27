@@ -58,13 +58,13 @@ function facebookAuth(){
 };
 
 /*------------------------------GOOGLE AUTH-----------------------------*/
-function googleAuth() {
+/*function googleAuth() {
   var provider = new firebase.auth.GoogleAuthProvider();  
   return firebase.auth().signInWithPopup(provider);
 };
 
 /*------------------------------TWITTER AUTH-----------------------------*/
-function twitterAuth(){
+/*function twitterAuth(){
   var provider = new firebase.auth.TwitterAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
@@ -81,3 +81,43 @@ function createUser (id, name, email, foto) {
 
 
 export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }
+  firebase.auth().signInWithPopup(provider);
+};
+
+/*------------------------------LOG IN APPS-----------------------------*/
+/*const providerGoogle = new firebase.auth.GoogleAuthProvider();
+
+const providerFacebook = new firebase.auth.FacebookAuthProvider();
+const providerTwitter = new firebase.auth.TwitterAuthProvider();
+
+const loginApps = (providers) => {
+  switch (providers){
+    case 1: 
+      firebase.auth().signInWithPopup(providerGoogle).then(function(result){   
+        // This gives you a Google Access Token. You can use it to access the Twitter API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+      })
+      break;
+
+    case 2:
+    firebase.auth().signInWithPopup(providerFacebook).then(function(result){
+           // This gives you a Facebook Access Token. You can use it to access the Twitter API.
+           var token = result.credential.accessToken;
+           // The signed-in user info.
+           var user = result.user;
+         });
+    break;
+
+    case 3:
+    firebase.auth().signInWithPopup(providerTwitter).then(function(result){
+           // This gives you a Twitter Access Token. You can use it to access the Twitter API.
+           var token = result.credential.accessToken;
+           // The signed-in user info.
+           var user = result.user;
+         });
+    break;
+  }
+}*/
+

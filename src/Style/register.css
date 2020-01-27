@@ -125,7 +125,7 @@
         justify-content: center;
         align-items: center;
     }
-    .register button{
+    .register button {
         font-family: 'Montserrat', sans-serif;
         font-size: 25px;
         color: white;
@@ -135,7 +135,7 @@
         width: 40%;
         max-width: 230px;
         min-width: 193px;
-        margin-bottom:6%;
+        margin-bottom: 6%;
         padding: 5%;
     }
     .register input{
@@ -154,7 +154,6 @@
         width: 320px;
         margin-bottom:6%;
     }
-
     .register p {
         font-family: Montserrat;
         font-style: normal;
@@ -164,8 +163,7 @@
         letter-spacing: 0.02em;
         color: white;
     }
-
-    .register #socialAuth{
+    .register #socialAuth {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
