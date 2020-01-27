@@ -58,13 +58,13 @@ function facebookAuth(){
 };
 
 /*------------------------------GOOGLE AUTH-----------------------------*/
-/*function googleAuth() {
+function googleAuth() {
   var provider = new firebase.auth.GoogleAuthProvider();  
   return firebase.auth().signInWithPopup(provider);
 };
 
 /*------------------------------TWITTER AUTH-----------------------------*/
-/*function twitterAuth(){
+function twitterAuth(){
   var provider = new firebase.auth.TwitterAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
@@ -81,11 +81,13 @@ function createUser (id, name, email, foto) {
 
 
 export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }
-  firebase.auth().signInWithPopup(provider);
-};
+ 
 
 /*------------------------------LOG IN APPS-----------------------------*/
-/*const providerGoogle = new firebase.auth.GoogleAuthProvider();
+/*firebase.auth().signInWithPopup(provider);
+}
+
+const providerGoogle = new firebase.auth.GoogleAuthProvider();
 
 const providerFacebook = new firebase.auth.FacebookAuthProvider();
 const providerTwitter = new firebase.auth.TwitterAuthProvider();
