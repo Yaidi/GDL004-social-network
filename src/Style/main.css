@@ -10,24 +10,34 @@ body{
 
 #menu{
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navLinks{
-    display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100vw;
+    background-color: white;
+    border-bottom: 1px solid #9A9A9A;
 }
-.navLinks a{
-    color: #3C3E67;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bolder; 
-    letter-spacing: 0.12em;
-    font-size: 12px;
-    text-decoration: none;
+
+#menu .nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
-.navLinks li{
-    list-style: none;
+#menu .navBtns{
+    width: 42px;
+    padding: 25px;
+}
+
+#menu p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    color: #1C3047;
 }
 
 #footer{

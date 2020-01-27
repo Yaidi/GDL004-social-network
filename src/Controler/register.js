@@ -1,12 +1,13 @@
-import { logInFn, signUpFn, logOutFn } from "../Model/firebase.js";
+import { facebookAuth, googleAuth, twitterAuth, logInFn, createUser } from "../Model/firebase.js";
 
 //Log in / Sign up with email
 function logIn(email, password, errorMsg) {
-  logInFn(email, password)
+ logInFn(email, password)
   .then(() => {
     window.location.hash = "#/home"
   })
   .catch((error) => {
+    console.log(error);
     const errorCode = error.code;
     const errorMessage = error.message;
     switch (errorCode) {
@@ -26,7 +27,7 @@ function logIn(email, password, errorMsg) {
 };
 
 //Log in / Sign up with facebook
-/*function facebookSignIn(){
+function facebookSignIn(){
   facebookAuth()
     .then((result) => {
       const user = result.user;
@@ -75,6 +76,6 @@ function twitterSignIn(){
       alert(`Ups! Algo salió mal. Error detectado: ${errorMessage}`)
       console.log('error detectado:', error);
     });
-};*/
+};
 
-export { logIn, facebookSignIn, googleSignIn, twitterSignIn };
+export { logIn, facebookSignIn, googleSignIn, twitterSignIn }
