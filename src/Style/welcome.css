@@ -1,6 +1,9 @@
 .welcome{
-    background-image: url("../images/desktop.png");
+    background-image: url("../images/Group\ 16.png");
     width: 100%;
+}
+#footer{
+    display: none;
 }
 .welcome h1{
     display: flex;
@@ -12,9 +15,8 @@
     font-size: 100px;
     line-height: 122px;
     letter-spacing: 0.02em;
-    text-decoration-line: underline;
     text-align: right;
-    color: #3C3E67;
+    color: white;
     /*margin-top: 137px;*/
     margin-left: 950px;
     margin-right: 150px;
@@ -31,14 +33,14 @@
     line-height: 44px;
     letter-spacing: 0.02em;
     text-align: right;
-    color: #3C3E67;
+    color: white;
     margin-left: 1000px;
     margin-top: 300px;
     margin-right: 150px;
 }
 .welcome button {
     background-color: transparent;
-    border: 4px solid #3C3E67;
+    border: 4px solid white;
     padding: 10px;
     width: 272px;
     margin-left: 1250px;
@@ -50,14 +52,14 @@
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
-    color: #3C3E67;
+    color: white;
 }
 
 
 
 @media screen and (max-width:768px){
     .welcome{ 
-        background-image: url("../images/welcome.png");
+        background-color: #1C3047;
         width: 100%;
     }
     .welcome h1{
