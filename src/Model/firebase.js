@@ -2,7 +2,7 @@ import { components } from "../View/index.js"
 
 /*-------------------------FIREBASE KEY AND CONFIG-------------------------*/
 
-var firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyDZBy9n50HCcJmEOL5-zzYyguPmUJGk3yM",
     authDomain: "red-feminista.firebaseapp.com",
     databaseURL: "https://red-feminista.firebaseio.com",
@@ -14,7 +14,6 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-//const dataBase = firebase.firestore();
 
 /*------------------------------LOG IN -----------------------------*/
 
@@ -82,7 +81,7 @@ function createUser(id, name, email, foto) {
 };
 
 
-export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }
+export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser, firebaseConfig }
 
 
 /*------------------------------LOG IN APPS-----------------------------*/

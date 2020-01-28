@@ -1,5 +1,8 @@
-export const profileEdit = () => {
-    const tmpProfile =
+export default () => {
+
+    const editProfile = document.createElement('div');
+
+    editProfile.innerHTML =
         `
  <section id="profile">
  <form>
@@ -14,13 +17,13 @@ export const profileEdit = () => {
 </section>
 
  `
-    const divElmnt = document.createElement("div")
-    divElmnt.innerHTML = viewHome;
+    let selectImage = editProfile.querySelector("#imageUser");
+    let nameCreate = editProfile.querySelector("#createNameUser").value;
+    let ocupationCreate = editProfile.querySelector("#createProfession").value;
+    let descriptionCreate = editProfile.querySelector("#descriptionCreate").value;
 
-    return divElmnt;
+    return editProfile;
 
-    let nameCreate = tmpProfile.querySelector("#createNameUser").value;
-    let ocupationCreate = tmpProfile.querySelector("#createProfession").value;
-    let descriptionCreate = tmpProfile.querySelector("#descriptionCreate").value;
+
 
 }

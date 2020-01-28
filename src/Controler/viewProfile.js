@@ -1,18 +1,27 @@
-import { profileEdit } from "../View/editProfile";
-import { userProfile, image } from "../Model/viewProfile";
-import { tmplView, viewProfile } from "../View/viewProfile";
+//import { selectImage, nameCreate, ocupationCreate, descriptionCreate } from "../View/editProfile.js";
+import { image } from "../Model/viewProfile.js";
+//import { imagePreview } from "../View/viewProfile.js";
+import { getProfile } from "../Model/getData.js";
+import { upProfileUser, db } from "../Model/upData.js";
 
 
-// VARIABLES PARA LA FUNCION MOSTRAR IMAGEN
-let selectImage = profileEdit.tmpProfile.querySelector("#imageUser");
-let imagePreview = tmplView.querySelector("#imagePreview");
+
 
 function seeImage() {
     selectImage.addEventListener("change", image(selectImage, imagePreview));
 }
-templateProfileEdit.querySelector("#save").addEventListener("click", (e) => {
-    e.preventDefault();
-    userProfile;
-});
+//templateProfileEdit.querySelector("#save").addEventListener("click", (e) => {
+//  e.preventDefault();
 
-//VARIABLES SACADO DE EDITPROFILE PARA VIEW PROFILE
+//});
+window.addEventListener('load', getProfile(db));
+
+let user = firebase.auth().currentUser;
+
+if (user) {
+    // User is signed in.
+    /* Va a poder editar su perfil */
+} else {
+    // No user is signed in.
+    /* No va a poder editar su perfil */
+}

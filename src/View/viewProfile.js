@@ -1,6 +1,9 @@
 //import { nameCreate, ocupationCreate, descriptionCreate } from "../Controler/viewProfile.js";
-export const viewProfile = () => {
-    const tmplView =
+export default () => {
+
+    const tmpView = document.createElement('div');
+
+    tmpView.innerHTML =
         `
 
      <section id="perfil">
@@ -12,10 +15,8 @@ export const viewProfile = () => {
 
      </section>
      `
-    const divElmnt = document.createElement("div")
-    divElmnt.innerHTML = viewHome;
-
-    return divElmnt;
 
 
+    return tmpView;
+    let imagePreview = tmpView.querySelector("#imagePreview");
 }
