@@ -20,25 +20,6 @@ function logInFn(email, password){
   return firebase.auth().signInWithEmailAndPassword(email, password);
 };
 
-//This is for view changes. We are not using it yet. 
-/*firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      //window.location.assign("#/home");
-      //local storage
-      var user = firebase.auth().currentUser;
-      
-      if (user != null) {
-        var email_id = user.email;
-       // document.querySelector("#userID").innerHTML = "User : " + email_id;
-      }
-    } else {
-      // No user is signed in.
-     // document.querySelector("#createAccount").style.display = "block";
-      //document.querySelector("#welcomeUser").style.display = "none";
-    }
-});*/
-
 /*------------------------------SIGN UP -----------------------------*/
 
 function signUpFn (email, password) {

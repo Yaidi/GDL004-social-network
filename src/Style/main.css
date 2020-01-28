@@ -8,7 +8,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-#menu{
+#dsktpMenu{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -19,18 +19,18 @@ body{
     border-bottom: 1px solid #9A9A9A;
 }
 
-#menu .nav{
+#dsktpMenu .nav{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-#menu .navBtns{
+#dsktpMenu .navBtns{
     width: 42px;
     padding: 25px;
 }
 
-#menu p {
+#dsktpMenu p {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
