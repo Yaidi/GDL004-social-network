@@ -2,30 +2,34 @@ import {
   facebookAuth, googleAuth, twitterAuth, logInFn, createUser,
 } from '../Model/firebase.js';
 
-// Log in / Sign up with email//
-function logIn(email, password, errorMsg) {
-  logInFn(email, password)
-    .then(() => {
-      window.location.hash = '#/home';
-    })
-    .catch((error) => {
-      console.log(error);
-      const errorCode = error.code;
-      switch (errorCode) {
-        case 'auth/user-not-found':
-          errorMsg.innerHTML = '*Usuario no registrado';
-          break;
-        case 'auth/wrong-password':
-          errorMsg.innerHTML = '*Contraseña incorrecta';
-          break;
-        case 'auth/invalid-email':
-          errorMsg.innerHTML = '*Formato de correo no válido';
-          break;
-        default:
-          errorMsg.innerHTML = '*Algo salió mal. Inténtalo de nuevo';
-      }
-    });
-}
+//Log in / Sign up with email
+function logIn(email, password, errorMsg, userId) {
+ logInFn(email, password)
+  .then(() => {
+    window.location.hash = "#/home"
+    userId.innerHTML = "User : " + email;
+    //console.log(email);
+  })
+  .catch((error) => {
+    console.log(error);
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    switch (errorCode) {
+      case 'auth/user-not-found':
+        errorMsg.innerHTML = '*Usuario no registrado';
+        break;
+      case 'auth/wrong-password':
+        errorMsg.innerHTML = '*Contraseña incorrecta';
+        break;
+      case 'auth/invalid-email':
+        errorMsg.innerHTML = '*Formato de correo no válido';
+        break;
+      default:
+        errorMsg.innerHTML = '*Algo salió mal. Inténtalo de nuevo';
+    }
+  });
+};
+
 
 // Log in / Sign up with facebook //
 function facebookSignIn() {

@@ -20,7 +20,7 @@ firebase.initializeApp(firebaseConfig);
 
 function logInFn(email, password) {
   return firebase.auth().signInWithEmailAndPassword(email, password);
-}
+};
 
 /*------------------------------SIGN UP -----------------------------*/
 
