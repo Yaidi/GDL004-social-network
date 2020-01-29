@@ -1,22 +1,24 @@
-//import { nameCreate, ocupationCreate, descriptionCreate } from "../Controler/viewProfile.js";
+import { profile } from '../Controler/viewProfile.js';
 export default () => {
-
+    // profile(nameCreate, ocupationCreate, descriptionCreate);
     const tmpView = document.createElement('div');
 
     tmpView.innerHTML =
         `
 
-     <section id="perfil">
-        <img id="imagePreview">
-        <label id="nameUser">${nameCreate}</label>
-        <label id="ocupación">${ocupationCreate}</label>
-        <label id="description">${descriptionCreate}</label>
-            <button id="showEdit"> Editar Perfil </button>
+     <section id='perfil'>
+        <img id='imagePreview'>
+        <label id='nameUser'>{nameCreate}</label>
+        <label id='ocupacion'>{ocupationCreate}</label>
+        <label id='description'>{descriptionCreate}</label>
+            <button id='showEdit'> Editar Perfil </button>
 
      </section>
      `
-
-
-    return tmpView;
     let imagePreview = tmpView.querySelector("#imagePreview");
+    let showEdit = tmpView.querySelector('showEdit');
+
+    //image(selectImage, imagePreview);
+    return tmpView;
+
 }

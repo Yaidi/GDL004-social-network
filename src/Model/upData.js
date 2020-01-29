@@ -1,12 +1,8 @@
-const admin = require('firebase-admin');
+/*const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 
 admin.initializeApp(functions.config().firebase);
-
-function db() {
-    let adminis = admin;
-    adminis.firestore();
-};
+let db = admin.firestore();
 
 function upProfileUser(username, country, descriptionUser, occupation) {
     db.collection('userProfile').add({
@@ -19,8 +15,4 @@ function upProfileUser(username, country, descriptionUser, occupation) {
     });
 }
 
-function upPost() {
-
-}
-
-export { upProfileUser, upPost, db };
+export { upProfileUser, db };*/
