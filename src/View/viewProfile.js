@@ -11,7 +11,7 @@ export default () => {
         <label id='nameUser'>{nameCreate}</label>
         <label id='ocupacion'>{ocupationCreate}</label>
         <label id='description'>{descriptionCreate}</label>
-            <button id='showEdit'> Editar Perfil </button>
+        <a href="#/EditProfile"> <button id='showEdit'> Editar Perfil </button></a> 
 
      </section>
      `

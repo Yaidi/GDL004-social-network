@@ -1,6 +1,5 @@
 import { profile } from '../Controler/viewProfile.js'
 export default () => {
-
     const editProfile = document.createElement('div');
 
     editProfile.innerHTML =
