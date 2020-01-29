@@ -1,25 +1,34 @@
-import { components } from "../View/index.js"
+import { components } from '../View/index.js';
 
 const router = (route) => {
-    const container = document.querySelector("#app");
-    container.innerHTML = "";
-    switch (route) {
-        case "":
-            { return container.appendChild(components.welcome()) }
-        case "#/":
-            { return container.appendChild(components.welcome()) }
-        case "#/register":
-            { return container.appendChild(components.register()) }
-        case "#/home":
-            { return container.appendChild(components.home()) }
-        case "#/profile":
-            { return container.appendChild(components.profile()) }
-        case "#/edit":
-            { return container.appendChild(components.edit()) }
-        default:
-            break;
+  const container = document.querySelector('#app');
+  container.innerHTML = '';
+  switch (route) {
+    case '':
+    case '#/': {
+      container.appendChild(components.welcome());
+      return;
     }
-    console.log(route)
+    case '#/register': {
+      container.appendChild(components.register());
+      return;
+    }
+    case '#/home': {
+      container.appendChild(components.home());
+      return;
+    }
+    case '#/profile': {
+      container.appendChild(components.profile());
+      return;
+    }
+    case '#/edit': {
+      container.appendChild(components.edit());
+      break;
+    }
+    default: {
+      break;
+    }
+  }
 };
 
-export { router }
+export { router };

@@ -1,5 +1,6 @@
 import { logIn, facebookSignIn, googleSignIn, twitterSignIn } from "../Controler/register.js";
 import { signUpFn } from "../Model/firebase.js"
+import userId from './home.js'; 
 
 export default () => {
 
@@ -31,8 +32,9 @@ let errorMsg = wrapperDiv.querySelector("#mensajeError");
 
 wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
     e.preventDefault();
-    logIn(userEmail.value, userPassword.value, errorMsg);
+    logIn(userEmail.value, userPassword.value, errorMsg, userId);
 });
+
 wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
     e.preventDefault();
     signUpFn(userEmail.value, userPassword.value);
