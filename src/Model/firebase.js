@@ -12,7 +12,6 @@ const firebaseConfig = {
 };
 // Initialize Firebase //
 firebase.initializeApp(firebaseConfig);
-// const dataBase = firebase.firestore(); //
 
 // ------------------------------LOG IN ----------------------------- //
 

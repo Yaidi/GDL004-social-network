@@ -1,19 +1,14 @@
-import {
-  facebookAuth, googleAuth, twitterAuth, logInFn, createUser,
-} from '../Model/firebase.js';
+import { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, createUser } from "../Model/firebase.js";
 
 //Log in / Sign up with email
-function logIn(email, password, errorMsg, userId) {
+function logIn(email, password, errorMsg) {
  logInFn(email, password)
   .then(() => {
     window.location.hash = "#/home"
-    userId.innerHTML = "User : " + email;
-    //console.log(email);
   })
   .catch((error) => {
     console.log(error);
     const errorCode = error.code;
-    const errorMessage = error.message;
     switch (errorCode) {
       case 'auth/user-not-found':
         errorMsg.innerHTML = '*Usuario no registrado';
@@ -30,9 +25,32 @@ function logIn(email, password, errorMsg, userId) {
   });
 };
 
+function signUp(email, password, errorMsg){
+  signUpFn(email, password)
+  .then(() => {
+    window.location.hash = "#/home"
+  })
+  .catch((error) => {
+    console.log(error);
+    const errorCode = error.code;
+    switch (errorCode) {
+      case 'auth/weak-password':
+        errorMsg.innerHTML = '*Tu contraseña debe tener más de 6 caracteres';
+        break;
+      case 'auth/email-already-in-use':
+        errorMsg.innerHTML = '*Ya existe una cuenta vinculada a este correo';
+        break;
+      case 'auth/invalid-email':
+        errorMsg.innerHTML = '*Formato de correo no válido';
+        break;
+      default:
+        errorMsg.innerHTML = '*Algo salió mal. Inténtalo de nuevo';
+    }
+  });
+};
 
-// Log in / Sign up with facebook //
-function facebookSignIn() {
+//Log in / Sign up with facebook
+function facebookSignIn(){
   facebookAuth()
     .then((result) => {
       const user = result.user;
@@ -80,6 +98,4 @@ function twitterSignIn() {
     });
 }
 
-export {
-  logIn, facebookSignIn, googleSignIn, twitterSignIn,
-};
+export { logIn, signUp, facebookSignIn, googleSignIn, twitterSignIn }
