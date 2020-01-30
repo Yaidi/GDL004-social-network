@@ -1,20 +1,21 @@
 import { userTemplate } from './userTemplate.js';
-import { dataBase } from '../Controler/home.js';
+import { dataBase } from '../Model/firebase.js';
+import { logOut } from '../Controler/home.js';
 
 export default () => {
     const viewHome = document.createElement('div');
     viewHome.innerHTML= `
     <div id='home'>
-        <!--div id='upperMenu'>
+        <div id='upperMenu'>
             <p>Inicio</p>
-            <a href="#/home"><img class="navBtns" src="./images/home.png"></a>
-        </div-->
+            <a href="#/home"><img class="navBtns" src="./images/back.png"></a>
+        </div>
         <div id="dsktpMenu">
             <p>FemmeApp</p>
             <div class="nav">
                 <a href="#/home"><img class="navBtns" src="./images/home.png"></a>
                 <a href="#/profile"><img class="navBtns" src="./images/avatar.png"></a>
-                <a href="#/"><img class="navBtns" src="./images/logout.png"></a>
+                <a href="#/"><img class="navBtns" id='logOutBtn' src="./images/logout.png"></a>
             </div>
         </div>
         <div id='userTemplate'></div>
@@ -33,11 +34,11 @@ export default () => {
         <div id='posts'>
             <ul id='postList'></ul>
         </div>
-        <!--div id='bottomMenu'>
+        <div id='bottomMenu'>
             <a href="#/home"><img class="navBtns" src="./images/home.png"></a>
             <a href="#/profile"><img class="navBtns" src="./images/avatar.png"></a>
-            <a href="#/"><img class="navBtns" src="./images/logout.png"></a>
-        </div-->
+            <a href="#/"><img id="logOut" class='navBtns' src="./images/logout.png"></a>
+        </div>
     </div>
     `;
 
@@ -45,7 +46,8 @@ export default () => {
     const userView = viewHome.querySelector('#userTemplate');
     userView.appendChild(userTemplate());
     
-    
+
+    //Adding post data to firebase from an input
     const form = viewHome.querySelector('#createPost');
     const postList = viewHome.querySelector('#postList');
 
@@ -57,6 +59,7 @@ export default () => {
         form.postContent.value = '';
     });
 
+    //Showing and deleting posts in real time
     dataBase.collection('posts').onSnapshot(querySnapshot => {
         let changes = querySnapshot.docChanges();
         changes.forEach(change => {
@@ -68,13 +71,8 @@ export default () => {
             }
         })
     });
-    /*dataBase.collection('posts').get()
-    .then((querySnapshot) => {
-        querySnapshot.docs.forEach(doc => {
-            renderPosts(doc);
-        })
-    });*/
-
+    
+    //Rendering posts in to the screen
     function renderPosts(doc){
         let li = document.createElement('li');
         let post = document.createElement('span');
@@ -83,9 +81,9 @@ export default () => {
         li.setAttribute('data-id', doc.id);
         post.textContent = doc.data().post;
         cross.textContent = 'x';
-
-        li.appendChild(post);
+        
         li.appendChild(cross);
+        li.appendChild(post);
         postList.appendChild(li);
 
         //deleting data
@@ -96,7 +94,12 @@ export default () => {
         });
     };
 
+    //Log Out
+    const logOutBtn = viewHome.querySelector('#logOutBtn');
+    logOutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        logOut();
+    });
 
     return viewHome;
-
 };

@@ -14,6 +14,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 // const dataBase = firebase.firestore();
 
+// Retrieve Firestore data //
+const dataBase = firebase.firestore();
+
 // ------------------------------LOG IN ----------------------------- //
 
 function logInFn(email, password) {
@@ -60,4 +63,4 @@ function createUser(id, name, email, foto) {
     });
 };
 
-export { facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }
+export { dataBase, facebookAuth, googleAuth, twitterAuth, logInFn, signUpFn, logOutFn, createUser }

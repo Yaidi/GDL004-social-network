@@ -1,13 +1,4 @@
-export { userInfo, dataBase };
-
-
-// Retrieve Firestore data
-const dataBase = firebase.firestore();
-/*dataBase.collection('users').get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    console.log(doc.data());
-  })
-});*/
+import { dataBase, logOutFn } from '../Model/firebase.js'
 
 //Showing user info
 function userInfo(userName, userPic) {
@@ -18,7 +9,7 @@ function userInfo(userName, userPic) {
             dataBase.collection('users').where("ID", "==", id).get()
                 .then((querySnapshot) => {
                     querySnapshot.forEach((document) => {
-                        userName.textContent = document.data().Email;
+                        userName.textContent = document.data().Nombre;
                         userPic.src = document.data().Foto;
                     });
                 }).catch((error) => {
@@ -28,9 +19,15 @@ function userInfo(userName, userPic) {
     })
 };
 
-/*
-function savePost(){
-  dataBase.collection('posts').add({
-    post: 
-  })
-}*/
+//Log out
+function logOut() {
+    logOutFn()
+        .then(() => {
+            window.location.hash = '#/';
+        })
+        .catch(() => {
+            window.alert('Ocurrió un error y no se pudo cerrar sesión');
+        })
+};
+
+export { userInfo, logOut };
