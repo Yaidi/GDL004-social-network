@@ -7,7 +7,7 @@ export default () => {
 
     wrapperDiv.innerHTML = `
     <div class="register"> 
-        <div class= "container"></div>
+        <div class= "container">
         <h2>Bienvenida</h2>
             <form id="form">
                 <div id="mensajeError"></div>
