@@ -24,15 +24,16 @@ export default () => {
 </section>
 
  `
-        //let selectImage = editProfile.querySelector("#imageUser");
-        //let nameCreate = editProfile.querySelector("#createNameUser").value;
-        //let ocupationCreate = editProfile.querySelector("#createProfession").value;
-        //let descriptionCreate = editProfile.querySelector("#descriptionCreate").value;
-        //selectImage.addEventListener("change", image(selectImage));
+    let selectImage = editProfile.querySelector("#imageUser");
+
+    //selectImage.addEventListener("change", image(selectImage));
 
     editProfile.querySelector("#save").addEventListener("click", (e) => {
         e.preventDefault();
-        //profile(nameCreate, ocupationCreate, descriptionCreate);
+        let nameCreate = editProfile.querySelector("#createNameUser").value;
+        let ocupationCreate = editProfile.querySelector("#createProfession").value;
+        let descriptionCreate = editProfile.querySelector("#descriptionCreate").value;
+        profile(nameCreate, ocupationCreate, descriptionCreate);
     });
 
 
