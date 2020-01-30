@@ -1,5 +1,5 @@
-import { logIn, facebookSignIn, googleSignIn, twitterSignIn } from "../Controler/register.js";
-import { signUpFn } from "../Model/firebase.js"
+import { logIn, facebookSignIn, googleSignIn, twitterSignIn, signUp } from "../Controler/register.js";
+import userId from './home.js'; 
 
 export default () => {
 
@@ -7,7 +7,7 @@ export default () => {
 
     wrapperDiv.innerHTML = `
     <div class="register"> 
-        <div class= "container"></div>
+        <div class= "container">
         <h2>Bienvenida</h2>
             <form id="form">
                 <div id="mensajeError"></div>
@@ -31,11 +31,12 @@ let errorMsg = wrapperDiv.querySelector("#mensajeError");
 
 wrapperDiv.querySelector("#logIn").addEventListener("click", (e) => {
     e.preventDefault();
-    logIn(userEmail.value, userPassword.value, errorMsg);
+    logIn(userEmail.value, userPassword.value, errorMsg, userId);
 });
+
 wrapperDiv.querySelector("#register").addEventListener("click", (e) => {
     e.preventDefault();
-    signUpFn(userEmail.value, userPassword.value);
+    signUp(userEmail.value, userPassword.value, errorMsg);
 });
 
 //Social media auth btns
