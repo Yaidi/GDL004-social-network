@@ -1,4 +1,4 @@
-import { profile } from '../Controler/viewProfile.js'
+import { upProfile } from '../Controler/editProfile.js';
 export default () => {
     const editProfile = document.createElement('div');
 
@@ -19,24 +19,22 @@ export default () => {
  <br>
  <input type='text' id= 'createUserDescription'>
  <br>
- <a href="#/profile"><button type="submit" id="save">Guardar</button></a>
+ <a href="#/profile"><button id="save">Guardar</button></a>
  </form>
 </section>
 
- `
+ `;
     let selectImage = editProfile.querySelector("#imageUser");
-
+    let nameCreate = editProfile.querySelector("#createNameUser");
+    let ocupationCreate = editProfile.querySelector("#createProfession");
+    let descriptionCreate = editProfile.querySelector('#descriptionCreate');
     //selectImage.addEventListener("change", image(selectImage));
 
     editProfile.querySelector("#save").addEventListener("click", (e) => {
         e.preventDefault();
-        let nameCreate = editProfile.querySelector("#createNameUser").value;
-        let ocupationCreate = editProfile.querySelector("#createProfession").value;
-        let descriptionCreate = editProfile.querySelector("#descriptionCreate").value;
-        profile(nameCreate, ocupationCreate, descriptionCreate);
+        upProfile(nameCreate.value, ocupationCreate.value, descriptionCreate.value);
     });
-
 
     return editProfile;
 
-}
+};

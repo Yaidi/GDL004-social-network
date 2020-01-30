@@ -1,18 +1,16 @@
-const admin = require('firebase-admin');
-const functions = require('firebase-functions');
+const db = firebase.firestore();
 
-admin.initializeApp(functions.config().firebase);
-let db = admin.firestore();
-
-function profile(nameCreate, ocupationCreate, descriptionCreate) {
-    db.collection('userProfile').add({
+function upProfile(nameCreate, ocupationCreate, descriptionCreate) {
+    db.collection('profiles').add({
         name: nameCreate,
         country: country,
         description: descriptionCreate,
         occupation: ocupationCreate,
+        photo: photoUser,
     }).then(ref => {
         console.log('Added document with ID: ', ref.id);
     });
+    return upProfile
 }
 
-export { profile };
+export { upProfile };
