@@ -3,43 +3,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F0C7A7;
+    background-color: white;
     color: #3C3E67;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
-
-#dsktpMenu{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100vw;
-    background-color: white;
-    border-bottom: 1px solid #9A9A9A;
-}
-
-#dsktpMenu .nav{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-#dsktpMenu .navBtns{
-    width: 42px;
-    padding: 25px;
-}
-
-#dsktpMenu p {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    text-align: right;
-    letter-spacing: 0.02em;
-    color: #1C3047;
-}
-
 #footer{
     display: flex;
     max-height: 16vh;
